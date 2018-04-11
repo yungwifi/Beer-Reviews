@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
     userModel.findById(req.params.id)
         .then((user) => {
             console.log("USERS", user)
-            res.render('users/profile', {
+            res.render('users/details', {
                 User: user
             })
         })
