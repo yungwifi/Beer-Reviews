@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const hbs = require('hbs')
 const methodOverride = require('method-override')
@@ -30,6 +31,16 @@ db.once('open', function () {
 })
 
 //routes
+//routes
+const userController = require('./controllers/userController.js')
+app.use('/users', userController)
+
+const barController = require('./controllers/barController.js')
+app.use('/bars', barController)
+
+const beerController = require('./controllers/beerController.js')
+app.use('/beers', beerController)
+
 app.get('/', function (req, res) {
-    res.send('Hello World')
+    res.redirect('/users')
 })
