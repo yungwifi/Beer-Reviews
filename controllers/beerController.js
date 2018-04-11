@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const beerModel = require("../models/beer")
+const barModel = require("../models/bar")
 
 //GET All Beers
 router.get('/', (req, res) => {

@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const barModel = require("../models/bar")
+const beerModel = require("../models/beer")
 
 //GET Show Alls Bars Page
 router.get('/', (req, res) => {

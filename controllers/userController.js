@@ -66,18 +66,4 @@ router.post('/:id', (req, res) => {
         })
 })
 
-//DELETE a User 
-router.delete('/:id', function (req, res) {
-    UserModel.findByIdAndRemove(req.params.id)
-        .then((users) => {
-            console.log('User deleted');
-            res.render('users/index', {
-                users
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
-
 module.exports = router

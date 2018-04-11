@@ -29,7 +29,7 @@ User.remove({})
         })
 
         const lowPlaces = new Bar({
-            name: 'Target',
+            name: 'Low Places',
             location: 'over there',
             rating: '5 stars'
         })
