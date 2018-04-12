@@ -18,7 +18,9 @@ const BarsSchema = new Schema({
 const UserSchema = new Schema({
     name: String,
     username: String,
-    photo_url: String,
+    age: String,
+    location: String,
+    image: String,
     bars: [BarsSchema]
 })
 

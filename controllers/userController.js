@@ -31,4 +31,29 @@ router.get('/:userId', (req, res) => {
         })
 })
 
+//PUT Update User 
+router.put('/:id', (req, res) => {
+    console.log(req.body)
+    userModel.findByIdAndUpdate(req.params.userId, req.body)
+        .then((users) => {
+            console.log(users)
+            res.render('users/details', {
+                users
+            })
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})
+
+router.get('/:userId/edit', (req, res) => {
+    userModel.findById(req.params.userId)
+        .then((users) => {
+            res.render('users/edit', {
+                id: req.params.userId,
+                users
+            })
+        })
+})
+
 module.exports = router

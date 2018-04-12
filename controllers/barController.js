@@ -7,13 +7,16 @@ const barModel = require("../models/bar")
 router.get('/', (req, res) => {
     const userId = req.params.userId
     userModel.findById(userId)
-        .then((user) => {
-            console.log(user)
-            const bars = user.bars
-            res.render('bars/index', {
-                user: user,
-                bars: bars
-            })
+        .then((users) => {
+            console.log(users)
+            barModel.find({})
+                .then((bars) => {
+                    console.log(bars)
+                    res.render('bars/index', {
+                        users: users,
+                        bars: bars
+                    })
+                })
         })
         .catch((err) => {
             console.log(err)
