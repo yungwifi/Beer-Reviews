@@ -78,12 +78,12 @@ router.get('/:userId/edit', (req, res) => {
 })
 
 //PUT Update User 
-router.put('/:id', (req, res) => {
+router.put('/:userId', (req, res) => {
     console.log(req.body)
     userModel.findByIdAndUpdate(req.params.userId, req.body)
         .then((users) => {
             console.log(users)
-            res.render('/users/details')
+            res.redirect(`/users/${users.id}`)
         })
         .catch((err) => {
             console.log(err)

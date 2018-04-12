@@ -1,6 +1,6 @@
 <h1>edit {{users.name}}</h1>
 
-<form class="edit-user" action="/users/{{user._id}}?_method=PUT" method="POST">
+<form class="edit-user" action="/users/{{users._id}}?_method=PUT" method="POST">
     <div>
         <label for="name">Your Name</label>
         <input type="text" name="name" value="{{users.name}}">
@@ -34,6 +34,6 @@
 
 </form>
 
-<form action="/users/{{user._id}}/delete">
+<form action="/users/{{users._id}}/delete">
     <button class="btn red" type="submit">Delete</button>
 </form>
