@@ -36,7 +36,7 @@ User.remove({})
         const yeungling = new Beer({
             name: 'Yeungling',
             style: 'Amber',
-            abv: 25.41,
+            abv: 5,
             rating: '5/5'
         })
         lowPlaces.beers.push(yeungling)

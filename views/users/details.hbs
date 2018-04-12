@@ -1,0 +1,18 @@
+<h1>{{users.name}}</h1>
+<ul>
+    {{#each users.bars}}
+    <li>{{this.name}}</li>
+    {{/each}}
+</ul>
+
+<div class="button primary">
+    <a href="/users/{{users._id}}">
+        Edit User Profile
+    </a>
+</div>
+
+<div class="button primary">
+    <a href="/users/new">
+        Delete User
+    </a>
+</div>

@@ -30,16 +30,15 @@ db.once('open', function () {
     console.log('database has been connected!')
 })
 
-//routes
-//routes
+//controller routes
 const userController = require('./controllers/userController.js')
 app.use('/users', userController)
 
 const barController = require('./controllers/barController.js')
-app.use('/bars', barController)
+app.use('/users/:id/bars', barController)
 
 const beerController = require('./controllers/beerController.js')
-app.use('/beers', beerController)
+app.use('/users/:id/bars/:barsId/beers', beerController)
 
 app.get('/', function (req, res) {
     res.redirect('/users')
