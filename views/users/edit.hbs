@@ -1,29 +1,29 @@
-<h1>edit {{user.name}}</h1>
+<h1>edit {{users.name}}</h1>
 
-<form class="edit-user" method="POST" action="/users/{{id}}?_method=PUT">
+<form class="edit-user" action="/users/{{user._id}}?_method=PUT" method="POST">
     <div>
         <label for="name">Your Name</label>
-        <input type="text" name="name" value="{{user.name}}">
+        <input type="text" name="name" value="{{users.name}}">
     </div>
     <div>
         <label for="username">Your Username</label>
-        <input type="text" name="username" value="{{user.username}}">
+        <input type="text" name="username" value="{{users.username}}">
     </div>
     <div>
         <label for="age">Your Age</label>
-        <input type="text" name="age" value="{{user.age}}">
+        <input type="text" name="age" value="{{users.age}}">
     </div>
     <div>
         <label for="location">Your Location</label>
-        <input type="text" name="location" value="{{user.location}}">
+        <input type="text" name="location" value="{{users.location}}">
     </div>
     <div>
         <label for="image">Profile Picture</label>
-        <input type="text" name="image" value="{{user.image}}">
+        <input type="text" name="image" value="{{users.image}}">
     </div>
     <div>
         <label for="bio">User Description</label>
-        <input type="text" name="bio">
+        <input type="text" name="bio" value="{{users.bio}}">
     </div>
     <button class="btn" type="submit">Update account</button>
 
@@ -34,6 +34,6 @@
 
 </form>
 
-<form action="/users/{{id}}?_method=DELETE" method="POST">
+<form action="/users/{{user._id}}/delete">
     <button class="btn red" type="submit">Delete</button>
 </form>

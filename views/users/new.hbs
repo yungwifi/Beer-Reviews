@@ -1,28 +1,28 @@
 <h1>Add New User</h1>
 
-<form method="POST" action="/users">
+<form action="/users" method="POST">
     <div>
         <label for="name">Your Name</label>
-        <input type="text" name="name" value="{{user.name}}">
+        <input type="text" name="name">
     </div>
     <div>
         <label for="username">Your Username</label>
-        <input type="text" name="username" value="{{user.username}}">
+        <input type="text" name="username">
     </div>
     <div>
         <label for="age">Your Age</label>
-        <input type="text" name="age" value="{{user.age}}">
+        <input type="text" name="age">
     </div>
     <div>
         <label for="location">Your Location</label>
-        <input type="text" name="location" value="{{user.location}}">
+        <input type="text" name="location">
     </div>
     <div>
         <label for="image">Profile Picture</label>
-        <input type="text" name="image" value="{{user.image}}">
+        <input type="text" name="image">
     </div>
     <div>
-        <label for="bio">User Description</label>
+        <label for="bio">User Bio</label>
         <input type="text" name="bio">
     </div>
     <button class="btn" type="submit">Create account</button>
