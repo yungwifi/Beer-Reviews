@@ -1,6 +1,6 @@
-<h1>edit {{user.name}}</h1>
+<h1>Add New User</h1>
 
-<form class="edit-user" method="POST" action="/users/{{id}}?_method=PUT">
+<form method="POST" action="/users">
     <div>
         <label for="name">Your Name</label>
         <input type="text" name="name" value="{{user.name}}">
@@ -25,15 +25,9 @@
         <label for="bio">User Description</label>
         <input type="text" name="bio">
     </div>
-    <button class="btn" type="submit">Update account</button>
+    <button class="btn" type="submit">Create account</button>
 
     <button class="btn">
         <a href="/users">cancel</a>
     </button>
-
-
-</form>
-
-<form action="/users/{{id}}?_method=DELETE" method="POST">
-    <button class="btn red" type="submit">Delete</button>
 </form>
