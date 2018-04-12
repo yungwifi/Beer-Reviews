@@ -25,7 +25,7 @@ User.remove({})
         const farnesDebarnk = new User({
             name: 'Farnes Debarnk',
             username: 'lupinDa3rd',
-            photoUrl: 'https://enterprisectr.org/wp-content/uploads/2014/09/bobloblaw.jpg'
+            image: 'https://enterprisectr.org/wp-content/uploads/2014/09/bobloblaw.jpg'
         })
 
         const lowPlaces = new Bar({

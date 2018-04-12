@@ -46,6 +46,7 @@ router.put('/:id', (req, res) => {
         })
 })
 
+//GET Edit User Info View 
 router.get('/:userId/edit', (req, res) => {
     userModel.findById(req.params.userId)
         .then((users) => {
@@ -53,6 +54,30 @@ router.get('/:userId/edit', (req, res) => {
                 id: req.params.userId,
                 users
             })
+        })
+})
+
+//DELTE User 
+// delete
+router.delete('/:userId', (req, res) => {
+    userModel.findByIdAndRemove(req.params.userId)
+        .then(() => {
+            res.redirect('/users')
+        })
+})
+
+router.post('/', (req, res) => {
+    const User = new User({
+        name: req.body.name,
+        username: req.body.username,
+        age: req.body.age,
+        location: req.body.location,
+        image: req.body.image,
+        bio: req.body.bio
+    })
+    User.save()
+        .then((savedUser) => {
+            res.redirect(`/users/${savedUser._id}`)
         })
 })
 

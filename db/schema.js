@@ -21,6 +21,7 @@ const UserSchema = new Schema({
     age: String,
     location: String,
     image: String,
+    bio: String,
     bars: [BarsSchema]
 })
 
