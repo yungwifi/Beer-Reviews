@@ -1,7 +1,7 @@
 <h1>{{users.name}}</h1>
 <ul>
     {{#each users.bars}}
-    <a href="/users/{{../usersId}}/bars/{{this._id}}">
+    <a href="/users/{{id}}/bars/{{this._id}}">
         <li>{{this.name}}</li>
     </a>
     {{/each}}
@@ -14,6 +14,12 @@
 <div class="button primary">
     <a href="/users/{{users._id}}/edit">
         Edit User
+    </a>
+</div>
+
+<div class="button primary">
+    <a href="/users/{{users._id}}/bars/new">
+        Add Bar
     </a>
 </div>
 
