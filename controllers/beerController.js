@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
     })
     newBeer.save()
         .then((savedBeer) => {
-            res.redirect('/beers')
+            res.redirect(`/users/${userId}/bars/${barId}`)
         })
         .catch((error) => {
             console.log(error)
