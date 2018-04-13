@@ -1,81 +1,54 @@
 const express = require('express')
 const router = express.Router()
 
-const beerModel = require("../models/beer")
+const userModel = require("../models/user")
 const barModel = require("../models/bar")
+const beerModel = require("../models/beer")
 
-//GET All Beers
-router.get('/', (req, res) => {
-    beerModel.find({})
-        .then((beers) => {
-            console.log("BEERS", beers)
-            res.render('beers/index', {
-                beers
-            })
+// POST New Beer
+router.post('/', (req, res) => {
+    console.log('Req body new beer: ', req.body)
+    const newBeer = new beerModel({
+        name: req.body.name,
+        style: req.body.style,
+        abv: req.body.abv,
+        rating: req.body.rating
+    })
+    newBeer.save()
+        .then((savedBeer) => {
+            res.redirect('/beers')
         })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
+//GET New Beer
+router.get('/new', (req, res) => {
+    res.render('beers/new')
 })
 
 //GET Specific Beer 
-router.get('/:id', (req, res) => {
-    beerModel.findById(req.params.id)
-        .then((beers) => {
-            console.log("BEER", beers)
-            res.render('beers/details', {
-                beers
+router.get('/:beerId', (req, res) => {
+    const userId = req.params.userId
+    const barId = req.params.barId
+    const beerId = req.params.beerId
+
+    userModel.findById(userId)
+        .then((user) => {
+            const bar = user.bars.id(barId)
+            const beer = bars.beers.id(beerId)
+
+            response.render('beer/details', {
+                userId,
+                bar,
+                beer
             })
         })
-        .catch((err) => {
-            console.log(err)
+        .catch((error) => {
+            console.log(error)
         })
 })
 
-//PUT Update Beer 
-router.put('/:id', (req, res) => {
-    console.log(req.body)
-    beerModel.findByIdAndUpdate(req.params.id, req.body)
-        .then((beers) => {
-            console.log(beers)
-            res.render('beers/details', {
-                beers
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
-
-// POST a new Beer
-router.post('/:id', (req, res) => {
-    beerModel.findById(req.params.id)
-        .then((beers) => {
-            bars.beers.push(new Beer({
-                name: req.body.name
-            }))
-            return beers.save()
-        })
-        .then((beers) => {
-            console.log(beers)
-            res.render('beers/details', {
-                beers
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
-
-//DELETE a Beer 
-router.delete('/:id', function (req, res) {
-    beerModel.findByIdAndRemove(req.params.id)
-        .then((beers) => {
-            console.log('Beer deleted');
-            res.render('beers/index', {
-                beers
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-})
 
 module.exports = router

@@ -1,10 +1,16 @@
-<h1>{{bars.name}}</h1>
+<h1>Test</h1>
+<h1>{{users.bars.name}}</h1>
 <ul>
-    {{#each bars}}
-    <li>{{beer.name}}</li>
+    {{#each users.bars.beers}}
+    <a href="/users/{{user._id}}/bars/{{bars._id}}/beers/{{beers._id}}">
+        <li>{{users.bars.beers.name}}</li>
+    </a>
     {{/each}}
 </ul>
 
-<form action="/bars/{{id}}/delete">
+<h2>{{bars.location}}</h2>
+<h2>{{bars.rating}}</h2>
+
+<form action="/users/{{users._id}}/bars/{{bars._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
 </form>

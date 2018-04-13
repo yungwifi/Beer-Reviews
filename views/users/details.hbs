@@ -1,7 +1,9 @@
 <h1>{{users.name}}</h1>
 <ul>
     {{#each users.bars}}
-    <li>{{this.name}}</li>
+    <a href="/users/{{../usersId}}/bars/{{this._id}}">
+        <li>{{this.name}}</li>
+    </a>
     {{/each}}
 </ul>
 

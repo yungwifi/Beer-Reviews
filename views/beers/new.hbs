@@ -1,0 +1,25 @@
+<h1>Add New Beer</h1>
+
+<form action="/users/{{userId}}/bars/{{bars._id}}/beers" method="POST">
+    <div>
+        <label for="name">Beer Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="style">Beer Style</label>
+        <input type="text" name="style">
+    </div>
+    <div>
+        <label for="abv">Beer's ABV</label>
+        <input type="text" name="abv">
+    </div>
+    <div>
+        <label for="rating">Beer Rating</label>
+        <input type="text" name="rating">
+    </div>
+    <button class="btn" type="submit">Add Beer</button>
+
+    <button class="btn">
+        <a href="/beers">cancel</a>
+    </button>
+</form>
