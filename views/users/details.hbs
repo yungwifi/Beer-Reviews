@@ -1,7 +1,7 @@
 <h1>{{users.name}}</h1>
 <ul>
     {{#each users.bars}}
-    <a href="/users/{{id}}/bars/{{this._id}}">
+    <a href="/users/{{../userId}}/bars/{{this._id}}">
         <li>{{this.name}}</li>
     </a>
     {{/each}}
@@ -26,3 +26,9 @@
 <form action="/users/{{users._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
 </form>
+
+<div class="button primary">
+    <a href="/users">
+        Home
+    </a>
+</div>

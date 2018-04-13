@@ -1,6 +1,6 @@
 <h1>Add New Beer</h1>
 
-<form action="/users/{{userId}}/bars/{{bars._id}}/beers" method="POST">
+<form action="/users/{{userId}}/bars/{{barId}}/beers" method="POST">
     <div>
         <label for="name">Beer Name</label>
         <input type="text" name="name">
@@ -18,8 +18,8 @@
         <input type="text" name="rating">
     </div>
     <button class="btn" type="submit">Add Beer</button>
-
+    <br>
     <button class="btn">
-        <a href="/beers">cancel</a>
+        <a href="/users/{{userId}}/bars/{{barId}}/">cancel</a>
     </button>
 </form>

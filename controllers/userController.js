@@ -55,11 +55,13 @@ router.get('/', (req, res) => {
 
 //GET Specific User
 router.get('/:userId', (req, res) => {
+    const userId = req.params.userId
     userModel.findById(req.params.userId)
         .then((users) => {
             console.log("USERS")
             res.render('users/details', {
-                users
+                users,
+                userId
             })
         })
         .catch((err) => {

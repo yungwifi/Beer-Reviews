@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const router = express.Router({ mergeParams: true })
 
 const userModel = require("../models/user")
 const barModel = require("../models/bar")
@@ -7,40 +7,70 @@ const beerModel = require("../models/beer")
 
 // POST New Beer
 router.post('/', (req, res) => {
+    const userId = req.params.id
+    const barId = req.params.barsId
+    const newBeer = req.body
     console.log('Req body new beer: ', req.body)
-    const newBeer = new beerModel({
-        name: req.body.name,
-        style: req.body.style,
-        abv: req.body.abv,
-        rating: req.body.rating
-    })
-    newBeer.save()
+
+    userModel.findById(userId)
+        .then((users) => {
+            const newBeer = new beerModel({
+                name: req.body.name,
+                style: req.body.style,
+                abv: req.body.abv,
+                rating: req.body.rating
+            })
+            const bar = users.bars.id(barId)
+            bar.beers.push(newBeer)
+            return users.save()
+        })
         .then((savedBeer) => {
-            res.redirect(`/users/${userId}/bars/${barId}`)
+            res.redirect(`/users/${userId}/bars/${req.params.barsId}`)
         })
         .catch((error) => {
             console.log(error)
         })
 })
 
+
 //GET New Beer
 router.get('/new', (req, res) => {
-    res.render('beers/new')
+    const userId = req.params.id
+    const barId = req.params.barsId
+    const beerId = req.params.beersId
+    userModel.findById(userId)
+        .then((users) => {
+            res.render('beers/new', {
+                barId,
+                userId,
+                beerId,
+            })
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 })
 
 //GET Specific Beer 
 router.get('/:beerId', (req, res) => {
-    const userId = req.params.userId
-    const barId = req.params.barId
+    const userId = req.params.id
+    const barsId = req.params.barsId
     const beerId = req.params.beerId
 
-    userModel.findById(userId)
-        .then((user) => {
-            const bar = user.bars.id(barId)
-            const beer = bars.beers.id(beerId)
+    console.log("Looking up user", userId)
+    console.log("Looking up bar", barsId)
+    console.log("Looking up beer", beerId)
 
-            response.render('beer/details', {
+    userModel.findById(userId)
+        .then((users) => {
+            console.log(users)
+            const bar = users.bars.id(barsId)
+            const beer = bar.beers.id(beerId)
+            res.render('beers/details', {
+                barsId,
+                beerId,
                 userId,
+                users,
                 bar,
                 beer
             })

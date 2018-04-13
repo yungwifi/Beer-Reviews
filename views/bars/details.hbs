@@ -2,7 +2,7 @@
     {{bar.name}}</h1>
 <ul>
     {{#each bar.beers}}
-    <a href="/users/{{userId}}/bars/{{bars._id}}/beers/{{beers._id}}">
+    <a href="/users/{{../userId}}/bars/{{../bar._id}}/beers/{{this._id}}">
         <li>{{this.name}}</li>
     </a>
     {{/each}}
@@ -12,6 +12,12 @@
 <h2>{{bar.rating}}</h2>
 
 
-<form action="/users/{{userId}}/bars/{{bar._id}}?_method=DELETE" method="POST">
+<form action="/users/{{users._id}}/bars/{{bar._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
 </form>
+
+<div class="button primary">
+    <a href="/users">
+        Home
+    </a>
+</div>

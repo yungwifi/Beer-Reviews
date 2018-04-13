@@ -4,6 +4,7 @@ const router = express.Router({ mergeParams: true })
 const barModel = require("../models/bar")
 const userModel = require("../models/user")
 
+//POST New Bar 
 router.post('/', (req, res) => {
     console.log(req.params.id)
     const userId = req.params.id
@@ -50,8 +51,8 @@ router.delete('/:barsId', (req, res) => {
 
 //GET Specific Bar Page
 router.get('/:barsId', (req, res) => {
-    console.log('SHOW ROUTE HIT')
     const userId = req.params.id
+    console.log('SHOW ROUTE HIT')
     userModel.findById(req.params.id)
         .then((users) => {
             console.log(users)
