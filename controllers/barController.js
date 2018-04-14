@@ -52,12 +52,14 @@ router.delete('/:barsId', (req, res) => {
 //GET Specific Bar Page
 router.get('/:barsId', (req, res) => {
     const userId = req.params.id
+    const barsId = req.params.barsId
     console.log('SHOW ROUTE HIT')
     userModel.findById(req.params.id)
         .then((users) => {
             console.log(users)
             const bar = users.bars.id(req.params.barsId)
             res.render('bars/details', {
+                barsId,
                 userId,
                 users,
                 bar

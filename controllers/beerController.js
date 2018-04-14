@@ -51,6 +51,49 @@ router.get('/new', (req, res) => {
         })
 })
 
+//GET Edit Beer Info View 
+router.get('/:beerId/edit', (req, res) => {
+    const userId = req.params.id
+    const barId = req.params.barsId
+    const beersId = req.params.beerId
+
+    userModel.findById(userId)
+        .then((users) => {
+            res.render('beers/edit', {
+                users,
+                userId,
+                beersId,
+                barId
+            })
+        })
+})
+
+//PUT Update Beer 
+router.put('/:beerId', (req, res) => {
+    const userId = req.params.id
+    console.log(userId)
+    const barId = req.params.barsId
+    const beersId = req.params.beerId
+
+    userModel.findByIdAndUpdate(userId)
+        .then((users) => {
+            console.log(users)
+            console.log(req.body)
+            const beer = users.bars.beers.id(beersId)
+            beer.name = req.body.name,
+                beer.style = req.body.style,
+                beer.abv = req.body.abv,
+                beer.rating = req.body.rating
+
+            return users.save()
+        }).then((updatedUser) => {
+            res.redirect(`/users/${userId}/bars/${req.params.barsId}/beers/${req.params.beerId}`)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+})
+
 //GET Specific Beer 
 router.get('/:beerId', (req, res) => {
     const userId = req.params.id

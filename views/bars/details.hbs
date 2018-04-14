@@ -1,5 +1,4 @@
-<h1>
-    {{bar.name}}</h1>
+<h3>{{bar.name}}</h3>
 <ul>
     {{#each bar.beers}}
     <a href="/users/{{../userId}}/bars/{{../bar._id}}/beers/{{this._id}}">
@@ -8,8 +7,8 @@
     {{/each}}
 </ul>
 
-<h2>{{bar.location}}</h2>
-<h2>{{bar.rating}}</h2>
+<h4>{{bar.location}}</h4>
+<h4>{{bar.rating}}</h4>
 
 
 <form action="/users/{{users._id}}/bars/{{bar._id}}?_method=DELETE" method="POST">
@@ -19,5 +18,11 @@
 <div class="button primary">
     <a href="/users">
         Home
+    </a>
+</div>
+
+<div class="button primary">
+    <a href="/users/{{userId}}/bars/{{barsId}}/beers/new">
+        Add Beer
     </a>
 </div>

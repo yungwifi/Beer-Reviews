@@ -1,17 +1,18 @@
-<h1>{{beer.name}}</h1>
+<h3> {{beer.name}}</h3>
 
+<li>{{beer.style}}</li>
+<li>{{beer.rating}}</li>
 
-<h2>{{beer.style}}</h2>
-<h2>{{beer.rating}}</h2>
-
-
-<form action="/users/{{users._id}}/bars/{{bar._id}}/beers/{{beer._id}}?_method=DELETE" method="POST">
-    <button class="btn red" type="submit">Delete</button>
-</form>
 
 <div class="button primary">
     <a href="/users/{{userId}}/bars/{{barsId}}/beers/new">
         Add Beer
+    </a>
+</div>
+
+<div class="button primary">
+    <a href="/users/{{userId}}/bars/{{barsId}}/beers/{{beerId}}/edit">
+        Edit Beer
     </a>
 </div>
 
