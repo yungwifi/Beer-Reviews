@@ -25,7 +25,9 @@ User.remove({})
         const farnesDebarnk = new User({
             name: 'Farnes Debarnk',
             username: 'lupinDa3rd',
-            image: 'https://enterprisectr.org/wp-content/uploads/2014/09/bobloblaw.jpg'
+            age: 25,
+            image: 'https://c.tribune.com.pk/2017/04/1388125-babysealafp-1492602774-843-640x480.jpg',
+            bio: 'I love beer so much I married it.'
         })
 
         const lowPlaces = new Bar({

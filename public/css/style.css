@@ -11,6 +11,12 @@
 }
 img {
     width: 100px;
+    height: 250px;
+}
+
+.card {
+    width:300px;
+
 }
 
 .red{

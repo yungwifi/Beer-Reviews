@@ -1,10 +1,9 @@
+<h3>{{users.name}}</h3>
 <div class="nav-wrapper">
     <div class="col s12">
-        <a href="/users" class="breadcrumb black-text">Users</a>
+        <a href="/users" class="breadcrumb black-text">Dashboard</a>
     </div>
 </div>
-
-<h3>{{users.name}}</h3>
 
 <h4>Favorite Bars</h4>
 
@@ -36,13 +35,6 @@
         Add Bar
     </a>
 </button>
-
-<button class="btn white-text">
-    <a href="/users">
-        Users
-    </a>
-</button>
-
 
 <form action="/users/{{users._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
