@@ -1,7 +1,18 @@
+.breadcrumbs{
+    color: black;
+}
 .cancel-button {
     text-decoration: none;
     color: orangered;
 }
-/* .nav-text{
-    margin-top: 10px;
-} */
+
+.btn {
+    color: white;
+}
+img {
+    width: 100px;
+}
+
+.red{
+    margin-top: 15px;
+}

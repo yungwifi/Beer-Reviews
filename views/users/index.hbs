@@ -1,14 +1,27 @@
-<h3>Beer Drinkers</h3>
-<ul>
-    {{#each users}}
-    <a href="/users/{{this._id}}">
-        <li>{{this.name}}</li>
-    </a>
-    {{/each}}
-</ul>
+<div class="header">
+    <h3>Beer Drinkers</h3>
+</div>
 
-<div class="button primary">
+<h5>User Profiles</h5>
+{{#each users}}
+<div class="col s12 m7 l6">
+    <div class="card">
+        <div class="card-image">
+            <img>
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <p>{{this.bio}}</p>
+            </div>
+            <div class="card-action">
+                <a href="/users/{{this._id}}">{{this.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+<button class="btn white-text">
     <a href="/users/new">
         Add New User
     </a>
-</div>
+</button>

@@ -1,34 +1,43 @@
 <h3>{{users.name}}</h3>
-<ul>
-    {{#each users.bars}}
-    <a href="/users/{{../userId}}/bars/{{this._id}}">
-        <li>{{this.name}}</li>
-    </a>
-    {{/each}}
-</ul>
+<div class="nav-wrapper">
+    <div class="col s12">
+        <a href="/users" class="breadcrumb black-text">Users</a>
+    </div>
+</div>
+
+
+<div class='beers-list'>
+    <ul>
+        {{#each users.bars}}
+        <a href="/users/{{../userId}}/bars/{{this._id}}">
+            <li>{{this.name}}</li>
+        </a>
+        {{/each}}
+    </ul>
+</div>
 
 <h2>{{users.age}}</h2>
 
-</div>
 
-<div class="button primary">
+<button class="btn white-text">
     <a href="/users/{{users._id}}/edit">
         Edit User
     </a>
-</div>
+</button>
 
-<div class="button primary">
+<button class="btn white-text">
     <a href="/users/{{users._id}}/bars/new">
         Add Bar
     </a>
-</div>
+</button>
+
+<button class="btn white-text">
+    <a href="/users">
+        Users
+    </a>
+</button>
+
 
 <form action="/users/{{users._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
 </form>
-
-<div class="button primary">
-    <a href="/users">
-        Home
-    </a>
-</div>

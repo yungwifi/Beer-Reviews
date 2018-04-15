@@ -1,4 +1,13 @@
 <h3>{{bar.name}}</h3>
+
+<div class="nav-wrapper">
+    <div class="col s12">
+        <a href="/users" class="breadcrumb black-text">Users</a>
+        <a href="/users/{{userId}}/bars/{{barId}}" class="breadcrumb black-text">Bar</a>
+    </div>
+</div>
+
+<h4>Beers Tasted</h4>
 <ul>
     {{#each bar.beers}}
     <a href="/users/{{../userId}}/bars/{{../bar._id}}/beers/{{this._id}}">
@@ -7,22 +16,24 @@
     {{/each}}
 </ul>
 
-<h4>{{bar.location}}</h4>
-<h4>{{bar.rating}}</h4>
+<h5>Location</h5>
+<p>{{bar.location}}</p>
+<h5>Rating</h5>
+<p>{{bar.rating}}</p>
 
+
+<button class="btn">
+    <a href="/users/{{users._id}}">
+        User Profile
+    </a>
+</button>
+
+<button class="btn">
+    <a href="/users/{{userId}}/bars/{{barsId}}/beers/new">
+        Add Beer
+    </a>
+</button>
 
 <form action="/users/{{users._id}}/bars/{{bar._id}}?_method=DELETE" method="POST">
     <button class="btn red" type="submit">Delete</button>
 </form>
-
-<div class="button primary">
-    <a href="/users">
-        Home
-    </a>
-</div>
-
-<div class="button primary">
-    <a href="/users/{{userId}}/bars/{{barsId}}/beers/new">
-        Add Beer
-    </a>
-</div>

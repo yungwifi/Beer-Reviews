@@ -1,23 +1,26 @@
 <h3> {{beer.name}}</h3>
-
-<li>{{beer.style}}</li>
-<li>{{beer.rating}}</li>
-
-
-<div class="button primary">
-    <a href="/users/{{userId}}/bars/{{barsId}}/beers/new">
-        Add Beer
-    </a>
+<div class="nav-wrapper">
+    <div class="col s12">
+        <a href="/users" class="breadcrumb black-text">Users</a>
+        <a href="/users/{{userId}}/bars/{{barId}}" class="breadcrumb black-text">Bar</a>
+        <a href="/users/{{userId}}/bars/{{barId}}/beers/{{beerId}}" class="breadcrumb black-text">Beer</a>
+    </div>
 </div>
 
-<div class="button primary">
+
+<h5>Beer Style</h5>
+<li>{{beer.style}}</li>
+<h5>Beer Rating</h5>
+<li>{{beer.rating}}</li>
+
+<button class="btn">
     <a href="/users/{{userId}}/bars/{{barsId}}/beers/{{beerId}}/edit">
         Edit Beer
     </a>
-</div>
+</button>
 
-<div class="button primary">
-    <a href="/users">
-        Home
+<button class="btn">
+    <a href="/users/{{userId}}/bars/{{barsId}}">
+        Bars Profile
     </a>
-</div>
+</button>
