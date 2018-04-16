@@ -2,6 +2,7 @@ const User = require('../models/User')
 const Bar = require('../models/Bar')
 const Beer = require('../models/Beer')
 
+require('dotenv').config()
 // connect to database
 const mongoose = require('mongoose')
 if (process.env.MONGODB_URI) {
