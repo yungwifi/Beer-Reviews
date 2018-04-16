@@ -48,3 +48,7 @@ app.use('/users/:id/bars/:barsId/beers', beerController)
 app.get('/', function (req, res) {
     res.redirect('/users')
 })
+
+app.get('*', function (req, res) {
+    res.send('what???', 404);
+});

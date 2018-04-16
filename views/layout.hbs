@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
@@ -15,9 +16,16 @@
 
 <body>
     <nav>
-        <a href="/users">
-            <p> Beer Reviews</p>
-        </a>
+        <div class="nav-wrapper">
+            <a href="/users" class="brand-logo">
+                <i class="large material-icons">local_bar</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="/users">Dashboard</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
         {{{ body }}}

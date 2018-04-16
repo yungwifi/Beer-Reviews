@@ -9,10 +9,7 @@
 .btn {
     color: white;
 }
-img {
-    width: 100px;
-    height: 250px;
-}
+
 
 .card {
     width:300px;
@@ -21,4 +18,23 @@ img {
 
 .red{
     margin-top: 15px;
+}
+
+.nav-text {
+    padding-left: 35px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-age {
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-bio {
+    padding-left: 15px;
 }
