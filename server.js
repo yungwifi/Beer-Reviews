@@ -50,5 +50,5 @@ app.get('/', function (req, res) {
 })
 
 app.get('*', function (req, res) {
-    res.send('what???', 404);
+    res.render('errors/fourohfours');
 });
