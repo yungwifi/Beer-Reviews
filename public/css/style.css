@@ -1,6 +1,8 @@
-.breadcrumbs{
+.breadcrumb{
     color: black;
+    text-decoration: underline;
 }
+
 .cancel-button {
     text-decoration: none;
     color: orangered;
@@ -10,18 +12,16 @@ a {
     color: white;
 }
 
+i {
+    margin-right: 15px;
+}
 
 .card {
     width:300px;
-
 }
 
 .red{
     margin-top: 15px;
-}
-
-.nav-text {
-    padding-left: 35px;
 }
 
 .user-info{
@@ -37,4 +37,39 @@ a {
 
 .user-bio {
     padding-left: 15px;
+}
+
+.add-user {
+    margin-bottom: 15px;
+}
+
+.cancel {
+    margin-top: 15px;
+}
+
+.bar-location{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.bar-rating{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.bar-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.collection {
+    margin-top: 20px;
 }

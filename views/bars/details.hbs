@@ -1,26 +1,36 @@
 <h3>{{bar.name}}</h3>
 
-<div class="nav-wrapper">
+<div class="nav-wrapper green lighten-3">
     <div class="col s12">
         <a href="/users" class="breadcrumb black-text">Dashboard</a>
         <a href="/users/{{users._id}}" class="breadcrumb black-text">{{users.name}}</a>
     </div>
 </div>
+<div class="bar-info">
+    <div class="bar-location">
+        <p>Location</p>
+        <li>{{bar.location}}</li>
+    </div>
+    <div class="bar-rating">
+        <p>Rating</p>
+        <li>{{bar.rating}}</li>
+    </div>
+</div>
 
-<h4>Beers Tasted</h4>
-<ul>
+<ul class="collection with-header">
+    <li class="collection-header">
+        <h4>Beers Tasted</h4>
+    </li>
     {{#each bar.beers}}
-    <a href="/users/{{../userId}}/bars/{{../bar._id}}/beers/{{this._id}}">
-        <li class="black-text">{{this.name}}</li>
-    </a>
+    <li class="collection-item">
+        <div>{{this.name}} &nbsp &nbsp Rating: &nbsp {{this.rating}} &nbsp &nbsp Style: &nbsp {{this.style}}
+            <a href="/users/{{../userId}}/bars/{{../bar._id}}/beers/{{this._id}}" class="secondary-content">
+                <i class="material-icons">directions_run</i>
+            </a>
+        </div>
+    </li>
     {{/each}}
 </ul>
-
-<h5>Location</h5>
-<p>{{bar.location}}</p>
-<h5>Rating</h5>
-<p>{{bar.rating}}</p>
-
 
 <button class="btn">
     <a href="/users/{{users._id}}">

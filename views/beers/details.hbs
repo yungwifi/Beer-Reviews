@@ -1,17 +1,19 @@
 <h3> {{beer.name}}</h3>
-<div class="nav-wrapper">
+<div class="nav-wrapper green lighten-3">
     <div class="col s12">
-        <a href="/users" class="breadcrumb black-text">Dashboard</a>
-        <a href="/users" class="breadcrumb black-text">{{users.name}}</a>
+        <a href="/users" class="breadcrumb black-text">Dashboard ></a>
+        <a href="/users" class="breadcrumb black-text">{{users.name}} ></a>
         <a href="/users/{{userId}}/bars/{{barsId}}" class="breadcrumb black-text">{{bar.name}}</a>
     </div>
 </div>
 
 
-<h5>Beer Style</h5>
+<p>Beer Style</p>
 <li>{{beer.style}}</li>
-<h5>Beer Rating</h5>
+<p>Beer Rating</p>
 <li>{{beer.rating}}</li>
+<p>Beer ABV</p>
+<li>{{beer.abv}}</li>
 
 <button class="btn">
     <a href="/users/{{userId}}/bars/{{barsId}}/beers/{{beerId}}/edit">

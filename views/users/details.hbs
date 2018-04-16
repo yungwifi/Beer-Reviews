@@ -1,5 +1,5 @@
 <h3>{{users.name}}</h3>
-<div class="nav-wrapper">
+<div class="nav-wrapper green lighten-3">
     <div class="col s12">
         <a href="/users" class="breadcrumb black-text">Dashboard</a>
     </div>
@@ -8,34 +8,37 @@
     <p> Age: </p>
     <p>{{users.age}}</p>
 </div>
-<div class="card small hide-on-small-only">
-    <div class="user-profile card-image">
-        <div class="profile-pic">
+<div class="col l4">
+    <div class="card hide-on-small-only">
+        <div class="card-image">
             <img src="{{users.image}}">
         </div>
-
-        <div class="user-info card-content">
-            <blockquote>{{users.bio}}</blockquote>
-        </div>
-    </div>
-</div>
-<h4>Favorite Bars</h4>
-
-<div class='bars-list'>
-    {{#each users.bars}}
-    <div class="col s12 m7 l6">
-        <div class="card hoverable">
-            <div class="card-stacked">
-                <div class="card-content">
-                    <p>{{this.rating}}</p>
-                </div>
-                <div class="card-action">
-                    <a href="/users/{{../userId}}/bars/{{this._id}}">{{this.name}}</a>
-                </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <p>{{users.bio}}</p>
             </div>
         </div>
     </div>
-    {{/each}}
+</div>
+
+<div class="bars-list col sm 12 m4 l4">
+    <h4>Favorite Bars</h4>
+    <div>
+        {{#each users.bars}}
+        <div class="col s12 m7 l6">
+            <div class="card hoverable">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{this.rating}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/users/{{../userId}}/bars/{{this._id}}">{{this.name}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
 
 

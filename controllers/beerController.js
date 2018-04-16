@@ -59,8 +59,12 @@ router.get('/:beerId/edit', (req, res) => {
 
     userModel.findById(userId)
         .then((users) => {
+            const bar = users.bars.id(barId)
+            const beer = bar.beers.id(beersId)
             res.render('beers/edit', {
                 users,
+                bar,
+                beer,
                 userId,
                 beersId,
                 barId
@@ -77,9 +81,10 @@ router.put('/:beerId', (req, res) => {
 
     userModel.findByIdAndUpdate(userId)
         .then((users) => {
-            console.log(users)
-            console.log(req.body)
-            const beer = users.bars.beers.id(beersId)
+            console.log("users", users)
+            console.log("REQUEST BODY", req.body)
+            const bar = users.bars.id(barId)
+            const beer = bar.beers.id(beersId)
             beer.name = req.body.name,
                 beer.style = req.body.style,
                 beer.abv = req.body.abv,

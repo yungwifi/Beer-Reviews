@@ -3,23 +3,24 @@
 <form action="/users/{{userId}}/bars/{{barId}}/beers/{{beersId}}?_method=PUT" method="POST">
     <div>
         <label for="name">Beer Name</label>
-        <input type="text" name="name" value="{{beers.name}}">
+        <input type="text" name="name" value="{{beer.name}}">
     </div>
     <div>
         <label for="style">Beer Style</label>
-        <input type="text" name="style" value="{{beers.style}}">
+        <input type="text" name="style" value="{{beer.style}}">
     </div>
     <div>
         <label for="abv">Beer's ABV</label>
-        <input type="text" name="abv" value="{{beers.abv}}">
+        <input type="text" name="abv" value="{{beer.abv}}">
     </div>
     <div>
         <label for="rating">Beer Rating</label>
-        <input type="text" name="rating" value="{{beers.rating}}">
+        <input type="text" name="rating" value="{{beer.rating}}">
     </div>
     <button class="btn" type="submit"> Update Beer</button>
     <br>
-    <button class="waves-effect waves-light btn-small cancel-button">
-        <a href="/users/{{userId}}/bars/{{barId}}/beers/{{beersId}}">cancel</a>
-    </button>
 </form>
+
+<button class="waves-effect waves-light btn cancel-button">
+    <a href="/users/{{userId}}/bars/{{barId}}/beers/{{beersId}}">cancel</a>
+</button>

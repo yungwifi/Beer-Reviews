@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const BeersSchema = new Schema({
     name: String,
     style: String,
-    ABV: Number,
+    abv: Number,
     rating: String
 })
 
