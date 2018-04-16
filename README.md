@@ -25,4 +25,4 @@ I learned CRUD. I thought I knew CRUD but I barely did. I learned how to set up 
 4. Previous Labs and Homeworks 
 
 # Phase 2 
-I would continue to style the app to have a great user experience. I would also like to include media queries that would adjust certain items for mobile. Currently I am about 50% responsive and I would like for it to be styled and fully responsible. My intentions are for this app to only be used on mobile. Super reach goals would be able to allow users to create their own profile that is private to them.
+I would continue to style the app to have a great user experience. I would also like to include media queries that would adjust certain items for mobile. Currently I am about 50% responsive and I would like for it to be styled and fully responsible. My intentions are for this app to only be used on mobile. Super reach goals would be able to allow users to create their own profile that is private to them. I would also like to add a footer. 
