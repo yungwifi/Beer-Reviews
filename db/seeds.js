@@ -1,6 +1,6 @@
-const User = require('../models/User')
-const Bar = require('../models/Bar')
-const Beer = require('../models/Beer')
+const User = require('../models/user')
+const Bar = require('../models/bar')
+const Beer = require('../models/beer')
 
 require('dotenv').config()
 // connect to database
