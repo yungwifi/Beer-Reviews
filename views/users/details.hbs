@@ -4,13 +4,13 @@
         <a href="/users" class="breadcrumb black-text">Dashboard</a>
     </div>
 </div>
-<div class="user-age">
-    <p> Age: </p>
-    <p>{{users.age}}</p>
-</div>
 
 <div class="user-profile">
     <div class="col l6">
+        <div class="user-age">
+            <p> Age: </p>
+            <p>{{users.age}}</p>
+        </div>
         <div class="card hide-on-small-only">
             <div class="card-image">
                 <img src="{{users.image}}">
@@ -44,19 +44,20 @@
     </div>
 </div>
 
+<div class="buttons">
+    <button class="btn white-text">
+        <a href="/users/{{users._id}}/edit">
+            Edit User
+        </a>
+    </button>
 
-<button class="btn white-text">
-    <a href="/users/{{users._id}}/edit">
-        Edit User
-    </a>
-</button>
+    <button class="btn white-text">
+        <a href="/users/{{users._id}}/bars/new">
+            Add Bar
+        </a>
+    </button>
 
-<button class="btn white-text">
-    <a href="/users/{{users._id}}/bars/new">
-        Add Bar
-    </a>
-</button>
-
-<form action="/users/{{users._id}}?_method=DELETE" method="POST">
-    <button class="btn red" type="submit">Delete</button>
-</form>
+    <form action="/users/{{users._id}}?_method=DELETE" method="POST">
+        <button class="btn red" type="submit">Delete</button>
+    </form>
+</div>
