@@ -8,36 +8,39 @@
     <p> Age: </p>
     <p>{{users.age}}</p>
 </div>
-<div class="col l4">
-    <div class="card hide-on-small-only">
-        <div class="card-image">
-            <img src="{{users.image}}">
-        </div>
-        <div class="card-stacked">
-            <div class="card-content">
-                <p>{{users.bio}}</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="bars-list col sm 12 m4 l4">
-    <h4>Favorite Bars</h4>
-    <div>
-        {{#each users.bars}}
-        <div class="col s12 m7 l6">
-            <div class="card hoverable">
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>{{this.rating}}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="/users/{{../userId}}/bars/{{this._id}}">{{this.name}}</a>
-                    </div>
+<div class="user-profile">
+    <div class="col l6">
+        <div class="card hide-on-small-only">
+            <div class="card-image">
+                <img src="{{users.image}}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p>{{users.bio}}</p>
                 </div>
             </div>
         </div>
-        {{/each}}
+    </div>
+
+    <div class="bars-list col sm 12 m4 l6">
+        <h4>Favorite Bars</h4>
+        <div>
+            {{#each users.bars}}
+            <div class="col s12 m7 l6">
+                <div class="card hoverable">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>{{this.location}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/users/{{../userId}}/bars/{{this._id}}">{{this.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
     </div>
 </div>
 

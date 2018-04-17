@@ -16,8 +16,18 @@ i {
     margin-right: 15px;
 }
 
+.user-dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .card {
     width:300px;
+}
+
+img {
+    width: 300px;
 }
 
 .red{
@@ -73,3 +83,19 @@ i {
 .collection {
     margin-top: 20px;
 }
+
+.user-profile {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.bars-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-footer{
+    margin-top: 30px;
+}
+
