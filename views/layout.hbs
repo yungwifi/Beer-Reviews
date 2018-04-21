@@ -17,17 +17,18 @@
 <body>
     <nav>
         <div class="nav-wrapper green darken-3">
-            <a href="/users" class="brand-logo">
+            <a href="/" class="brand-logo">
                 <i class="large material-icons">local_bar</i>
             </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
-                    <a href="/users">Dashboard</a>
+            <ul id="nav-mobile" class="right">
+                <li class="nav-links">
+                    <a href="/users">Users</a>
+                    <a href="/users/new">Sign Up</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div>
         {{{ body }}}
     </div>
     <footer class="page-footer green darken-3">

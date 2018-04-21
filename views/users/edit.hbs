@@ -1,6 +1,6 @@
-<h4>Edit {{users.name}}</h4>
+<h4 class="user-name-edit">Edit {{users.name}}</h4>
 
-<form class="edit-user" action="/users/{{users._id}}?_method=PUT" method="POST">
+<form class="edit-user container" action="/users/{{users._id}}?_method=PUT" method="POST">
     <div>
         <label for="name">Your Name</label>
         <input type="text" name="name" value="{{users.name}}">
@@ -29,6 +29,6 @@
 
 </form>
 
-<button class="cancel-button waves-effect waves-light btn">
+<button class="cancel-button btn danger">
     <a href="/users/{{users._id}}">cancel</a>
 </button>

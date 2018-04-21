@@ -46,7 +46,7 @@ const beerController = require('./controllers/beerController.js')
 app.use('/users/:id/bars/:barsId/beers', beerController)
 
 app.get('/', function (req, res) {
-    res.redirect('/users')
+    res.render('home/home')
 })
 
 app.get('*', function (req, res) {
